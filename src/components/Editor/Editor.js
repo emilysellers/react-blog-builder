@@ -2,7 +2,16 @@ import React from 'react';
 
 import './Editor.css';
 
-export default function Editor({ title, setTitle, subtitle, setSubtitle, font, setFont }) {
+export default function Editor({
+  title,
+  setTitle,
+  subtitle,
+  setSubtitle,
+  font,
+  setFont,
+  text,
+  setText,
+}) {
   const titleHandler = (event) => {
     setTitle(event.target.value);
   };
@@ -12,6 +21,9 @@ export default function Editor({ title, setTitle, subtitle, setSubtitle, font, s
   const fontHandler = (event) => {
     setFont(event.target.value);
     console.log(event.target.value);
+  };
+  const textHandler = (event) => {
+    setText(event.target.value);
   };
   return (
     <div className="editor">
@@ -60,7 +72,7 @@ export default function Editor({ title, setTitle, subtitle, setSubtitle, font, s
         </div>
       </div>
       <div className="form-control">
-        <textarea style={{ height: '250px' }} />
+        <textarea value={text} onChange={textHandler} style={{ height: '250px' }} />
         <label>Text</label>
       </div>
     </div>
