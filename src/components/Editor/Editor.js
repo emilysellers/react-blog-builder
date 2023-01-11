@@ -22,7 +22,6 @@ export default function Editor({
   };
   const fontHandler = (event) => {
     setFont(event.target.value);
-    console.log(event.target.value);
   };
   const textHandler = (event) => {
     setText(event.target.value);
