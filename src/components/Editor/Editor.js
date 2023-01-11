@@ -9,7 +9,12 @@ export default function Editor({ title, setTitle }) {
   return (
     <div className="editor">
       <div className="form-control">
-        <input name={title} type="text" onChange={(event) => setTitle(event.target.value)} />
+        <input
+          name="title"
+          type="text"
+          value={title}
+          onChange={(event) => setTitle(event.target.value)}
+        />
         <label htmlFor="title">Title</label>
       </div>
       <div className="form-control">
